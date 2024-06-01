@@ -245,3 +245,6 @@ $RECYCLE.BIN/
 *.umap
 *.unity
 *.unity3d
+/bk/backendMine/.vs
+/bk/Login/.vs
+/bk/Login/bin/Debug
