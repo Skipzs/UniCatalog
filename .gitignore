@@ -11,7 +11,7 @@
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -188,7 +188,6 @@ $RECYCLE.BIN/
 *.po
 *.pom
 *.prefs
-*.proj
 *.proj-data
 *.proj-info
 *.project
@@ -211,8 +210,6 @@ $RECYCLE.BIN/
 *.sha1
 *.shfb
 *.sin
-*.sln
-*.sln.docstates
 *.slog
 *.sql
 *.staging
