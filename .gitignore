@@ -198,8 +198,6 @@ $RECYCLE.BIN/
 *.pyproj
 *.python-version
 *.reco
-*.resources
-*.resx
 *.rom
 *.ruleset
 *.s3db
