@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {}
+    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
+    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,25 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
+    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
         "projectName": "MongoDB",
-        "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
+        "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\obj\\",
+        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,14 +89,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj"
+              "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj"
               }
             }
           }
@@ -144,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

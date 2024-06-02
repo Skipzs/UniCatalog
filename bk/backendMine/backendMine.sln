@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB", "..\MongoDB\MongoDB.csproj", "{85398D8B-9C29-4FFE-A2F6-8FBEA2D7E725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "..\Login\Forms.csproj", "{01308593-B549-4A06-8471-A29730322F53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "..\Forms\Forms.csproj", "{01308593-B549-4A06-8471-A29730322F53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
