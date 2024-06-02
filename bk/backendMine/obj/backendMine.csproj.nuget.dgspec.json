@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj": {}
+    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj": {
+    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj",
         "projectName": "backendMine",
-        "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj",
+        "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\backendMine\\backendMine.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\backendMine\\obj\\",
+        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\backendMine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
-                "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj"
+              "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
+                "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
+    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -149,14 +149,14 @@
         }
       }
     },
-    "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
+    "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
         "projectName": "MongoDB",
-        "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
+        "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\MongoDB.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\MongoDB\\obj\\",
+        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\MongoDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -174,8 +174,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\Domain.csproj"
+              "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj"
               }
             }
           }
