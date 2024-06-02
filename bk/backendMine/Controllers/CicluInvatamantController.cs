@@ -62,5 +62,24 @@ namespace backendMine.Controllers
       }
       return Ok(response);
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(string id, CancellationToken token)
+    {
+      var Collection = this._database.GetDbCollection<CicluInvatamant>("CicluInvatamant");
+
+      var data = await (await Collection.FindAsync(Builders<CicluInvatamant>.Filter.Empty)).FirstOrDefaultAsync(token);
+
+      CicluInvatamantDtoResponse response =new CicluInvatamantDtoResponse();
+
+
+        var CollectionProgramStudio = this._database.GetDbCollection<ProgramStudiu>("ProgramStudiu");
+        var filter = Builders<ProgramStudiu>.Filter.In("Id", data.ProgramStudiuIds);
+        var pointer = await CollectionProgramStudio.FindAsync(filter);
+        var dataAni = await pointer.ToListAsync(token);
+      response.Nume = data.Nume;
+      response.Id = data.Id;
+      response.ProgramStudiuIds = dataAni;
+      return Ok(response);
+    }
   }
 }

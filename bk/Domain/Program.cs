@@ -1,12 +1,10 @@
 ﻿namespace Domain
-
-
 {
-  internal static class Program
+  internal class Program
   {
-        static void Main()
+    static void Main(string[] args)
     {
       Console.WriteLine("Hello, World!");
-        }
+    }
   }
 }

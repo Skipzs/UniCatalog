@@ -1,6 +1,5 @@
 using MongoDB;
 
-
 namespace backendMine
 {
   public class Program
@@ -38,7 +37,6 @@ namespace backendMine
       app.MapControllers();
 
       app.Run();
-
     }
   }
 }

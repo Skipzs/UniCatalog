@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "backendMine/1.0.0": {
         "dependencies": {
-          "Login": "1.0.0",
           "MongoDB": "1.0.0",
           "MongoDB.Driver": "2.25.0",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -214,11 +213,6 @@
           "Domain.dll": {}
         }
       },
-      "Login/1.0.0": {
-        "runtime": {
-          "Login.exe": {}
-        }
-      },
       "MongoDB/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
@@ -405,11 +399,6 @@
       "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
     },
     "Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Login/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
