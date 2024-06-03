@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[2.25.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -89,7 +93,7 @@
         "projectName": "Domain",
         "projectPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adria\\source\\repos\\UniCatalog\\bk\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\adria\\Source\\Repos\\UniCatalog\\bk\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -127,6 +131,10 @@
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[2.25.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -198,6 +206,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.25.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

@@ -61,13 +61,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CicluriDeInvDropDown.FormattingEnabled = true;
-            this.CicluriDeInvDropDown.Items.AddRange(new object[] {
-            "Licentă",
-            "Masterat"});
             this.CicluriDeInvDropDown.Location = new System.Drawing.Point(60, 130);
             this.CicluriDeInvDropDown.Name = "CicluriDeInvDropDown";
             this.CicluriDeInvDropDown.Size = new System.Drawing.Size(141, 24);
             this.CicluriDeInvDropDown.TabIndex = 1;
+            this.CicluriDeInvDropDown.SelectedIndexChanged += new System.EventHandler(this.CicluriDeInvDropDown_SelectedIndexChanged);
             // 
             // CicluriDeInvLabel
             // 
@@ -88,13 +86,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProgrameStudiiDropDown.FormattingEnabled = true;
-            this.ProgrameStudiiDropDown.Items.AddRange(new object[] {
-            "Licentă",
-            "Masterat"});
             this.ProgrameStudiiDropDown.Location = new System.Drawing.Point(240, 130);
             this.ProgrameStudiiDropDown.Name = "ProgrameStudiiDropDown";
             this.ProgrameStudiiDropDown.Size = new System.Drawing.Size(141, 24);
             this.ProgrameStudiiDropDown.TabIndex = 1;
+            this.ProgrameStudiiDropDown.SelectedIndexChanged += new System.EventHandler(this.ProgrameStudiiDropDown_SelectedIndexChanged);
             // 
             // ProgrameStudiiLabel
             // 
@@ -115,13 +111,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AniiDeStudiuDropDown.FormattingEnabled = true;
-            this.AniiDeStudiuDropDown.Items.AddRange(new object[] {
-            "Licentă",
-            "Masterat"});
             this.AniiDeStudiuDropDown.Location = new System.Drawing.Point(420, 130);
             this.AniiDeStudiuDropDown.Name = "AniiDeStudiuDropDown";
             this.AniiDeStudiuDropDown.Size = new System.Drawing.Size(141, 24);
             this.AniiDeStudiuDropDown.TabIndex = 1;
+            this.AniiDeStudiuDropDown.SelectedIndexChanged += new System.EventHandler(this.AniiDeStudiuDropDown_SelectedIndexChanged);
             // 
             // AniiDeStudiuLabel
             // 
@@ -142,9 +136,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SemestruDropDown.FormattingEnabled = true;
-            this.SemestruDropDown.Items.AddRange(new object[] {
-            "Licentă",
-            "Masterat"});
             this.SemestruDropDown.Location = new System.Drawing.Point(600, 130);
             this.SemestruDropDown.Name = "SemestruDropDown";
             this.SemestruDropDown.Size = new System.Drawing.Size(141, 24);
