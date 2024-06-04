@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backendMine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a77d53b9c1188e9c20db34eaa3a7479f87d75395")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fb904838761e3c006bbd68e42378b88d41605e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("backendMine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backendMine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
