@@ -140,6 +140,7 @@
             this.SemestruDropDown.Name = "SemestruDropDown";
             this.SemestruDropDown.Size = new System.Drawing.Size(141, 24);
             this.SemestruDropDown.TabIndex = 1;
+            this.SemestruDropDown.SelectedIndexChanged += new System.EventHandler(this.SemestruDropDown_SelectedIndexChanged);
             // 
             // SemestruLabel
             // 

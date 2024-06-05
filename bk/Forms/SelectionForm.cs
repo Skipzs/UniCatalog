@@ -12,9 +12,12 @@ namespace Login
         private readonly HttpClient _httpClient;
         private readonly string _baseAddress = "https://localhost:7063/api/"; // Adresa de bază a API-ului
 
+        private string semestruId;
+
         private LoginForm loginForm;
         private List<CicluInvatamant> cicluriInvatamant; // Variabila globala pentru a stoca ciclurile de invatamant
         CicluInvatamant cicluSelectat;
+        private AnStudiuResponse anStudiuResponse;
 
         public SelectionForm()
         {
@@ -152,7 +155,7 @@ namespace Login
                 var response = await _httpClient.GetAsync($"AnStudiu/id?id={anStudiuId}");
                 response.EnsureSuccessStatusCode();
                 var responseData = await response.Content.ReadAsStringAsync();
-                var anStudiuResponse = JsonConvert.DeserializeObject<AnStudiuResponse>(responseData);
+                anStudiuResponse = JsonConvert.DeserializeObject<AnStudiuResponse>(responseData);
 
                 // Șterge semestrele existente din combobox
                 SemestruDropDown.Items.Clear();
@@ -173,10 +176,23 @@ namespace Login
 
         private void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            
+            if (CicluriDeInvDropDown.Text == "" || ProgrameStudiiDropDown.Text == ""
+                || AniiDeStudiuDropDown.Text == "" || SemestruDropDown.Text == "")
+            {
+                MessageBox.Show("Toate campurile trebuiesc selectate", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else { 
+            String query = $"User/{CicluriDeInvDropDown.Text}/{ProgrameStudiiDropDown.Text}/{AniiDeStudiuDropDown.Text}/{SemestruDropDown.Text}";
+            Tabele t = new Tabele(query, semestruId);
+            t.Show();
+            }
+
         }
 
-
+        private void SemestruDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            semestruId = anStudiuResponse.Semestre[SemestruDropDown.SelectedIndex].Id;
+        }
     }
 
     public class ProgramStudiu
