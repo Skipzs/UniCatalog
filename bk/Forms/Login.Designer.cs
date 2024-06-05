@@ -1,4 +1,7 @@
-﻿namespace Login
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Login
 {
     partial class LoginForm
     {

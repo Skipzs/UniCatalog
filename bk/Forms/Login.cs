@@ -12,6 +12,7 @@ namespace Login
         {
             InitializeComponent();
             this.FormClosing += new FormClosingEventHandler(LoginForm_FormClosing);
+            
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
@@ -19,6 +18,12 @@ namespace Login
         private readonly string _baseAddress = "https://localhost:7063/api/";
         private string _query;
         private string _semestruId;
+        private bool _columnsSetup = false;
+
+        private string _programStudiu;
+        private string _cicluInvatamant;
+        private string _anStudiu;
+        private string _semestru;
 
         public Tabele(string query, string semestruId)
         {
@@ -46,8 +51,25 @@ namespace Login
                 var semestruResponseBody = await semestruResponse.Content.ReadAsStringAsync();
                 var semestruData = JsonConvert.DeserializeObject<SemestruResponse>(semestruResponseBody);
 
-                // Setup DataGridView columns
-                SetupDataGridView(users, semestruData);
+                // Set the pre-filled values
+                if (users.Any())
+                {
+                    var firstUser = users.First();
+                    _programStudiu = firstUser.ProgramStudiu;
+                    _cicluInvatamant = firstUser.CicluInvatamant;
+                    _anStudiu = firstUser.AnStudiu;
+                    _semestru = firstUser.Semestru;
+                }
+
+                // Setup DataGridView columns if not already set up
+                if (!_columnsSetup)
+                {
+                    SetupDataGridView(semestruData);
+                    _columnsSetup = true;
+                }
+
+                // Bind the users to the DataGridView
+                TabeleStudenti.DataSource = new BindingList<User>(users);
             }
             catch (Exception ex)
             {
@@ -55,7 +77,7 @@ namespace Login
             }
         }
 
-        private void SetupDataGridView(List<User> users, SemestruResponse semestruData)
+        private void SetupDataGridView(SemestruResponse semestruData)
         {
             TabeleStudenti.AutoGenerateColumns = false;
 
@@ -77,9 +99,6 @@ namespace Login
             {
                 TabeleStudenti.Columns.Add(CreateTextBoxColumn(disciplina.NumeDisciplina, disciplina.NumeDisciplina, false));
             }
-
-            // Bind the users to the DataGridView
-            TabeleStudenti.DataSource = new BindingList<User>(users);
         }
 
         private DataGridViewTextBoxColumn CreateTextBoxColumn(string dataPropertyName, string headerText, bool readOnly)
@@ -93,9 +112,37 @@ namespace Login
             };
         }
 
+        private async void AddUserButton_Click(object sender, EventArgs e)
+        {
+            using (var addUserForm = new AddUserForm(_programStudiu, _cicluInvatamant, _anStudiu, _semestru))
+            {
+                if (addUserForm.ShowDialog() == DialogResult.OK)
+                {
+                    var newUser = addUserForm.NewUser;
+                    try
+                    {
+                        var jsonContent = JsonConvert.SerializeObject(newUser);
+                        var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                        var response = await _httpClient.PostAsync($"{_baseAddress}User/", httpContent);
+                        response.EnsureSuccessStatusCode();
+
+                        MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Add new user to the existing DataGridView's data source
+                        var users = (BindingList<User>)TabeleStudenti.DataSource;
+                        users.Add(newUser);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 // Open file dialog for saving Excel file
