@@ -59,5 +59,19 @@ namespace Forms.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dash_computer_icons_clip_art_least_count_2242c6e02bb9214666ddb253acc75c6b {
+            get {
+                object obj = ResourceManager.GetObject("dash-computer-icons-clip-art-least-count-2242c6e02bb9214666ddb253acc75c6b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
     }
 }

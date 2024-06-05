@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionForm));
-            this.ButtonBack = new System.Windows.Forms.Button();
             this.CicluriDeInvDropDown = new System.Windows.Forms.ComboBox();
             this.CicluriDeInvLabel = new System.Windows.Forms.Label();
             this.ProgrameStudiiDropDown = new System.Windows.Forms.ComboBox();
@@ -39,21 +38,9 @@
             this.SemestruDropDown = new System.Windows.Forms.ComboBox();
             this.SemestruLabel = new System.Windows.Forms.Label();
             this.ButtonSubmit = new System.Windows.Forms.Button();
+            this.minButton = new System.Windows.Forms.Button();
+            this.ButtonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // ButtonBack
-            // 
-            this.ButtonBack.BackColor = System.Drawing.Color.LightGray;
-            this.ButtonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonBack.BackgroundImage")));
-            this.ButtonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonBack.ForeColor = System.Drawing.Color.LightGray;
-            this.ButtonBack.Location = new System.Drawing.Point(12, 12);
-            this.ButtonBack.Name = "ButtonBack";
-            this.ButtonBack.Size = new System.Drawing.Size(40, 40);
-            this.ButtonBack.TabIndex = 0;
-            this.ButtonBack.UseVisualStyleBackColor = false;
-            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // CicluriDeInvDropDown
             // 
@@ -172,12 +159,42 @@
             this.ButtonSubmit.UseVisualStyleBackColor = false;
             this.ButtonSubmit.Click += new System.EventHandler(this.ButtonSubmit_Click);
             // 
+            // minButton
+            // 
+            this.minButton.BackgroundImage = global::Forms.Properties.Resources.dash_computer_icons_clip_art_least_count_2242c6e02bb9214666ddb253acc75c6b;
+            this.minButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.minButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minButton.ForeColor = System.Drawing.Color.LightGray;
+            this.minButton.Location = new System.Drawing.Point(756, 12);
+            this.minButton.Name = "minButton";
+            this.minButton.Size = new System.Drawing.Size(32, 25);
+            this.minButton.TabIndex = 4;
+            this.minButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.minButton.UseVisualStyleBackColor = true;
+            this.minButton.Click += new System.EventHandler(this.minButton_Click);
+            // 
+            // ButtonBack
+            // 
+            this.ButtonBack.BackColor = System.Drawing.Color.LightGray;
+            this.ButtonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonBack.BackgroundImage")));
+            this.ButtonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonBack.ForeColor = System.Drawing.Color.LightGray;
+            this.ButtonBack.Location = new System.Drawing.Point(12, 12);
+            this.ButtonBack.Name = "ButtonBack";
+            this.ButtonBack.Size = new System.Drawing.Size(40, 40);
+            this.ButtonBack.TabIndex = 0;
+            this.ButtonBack.UseVisualStyleBackColor = false;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
+            // 
             // SelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.minButton);
             this.Controls.Add(this.ButtonSubmit);
             this.Controls.Add(this.SemestruLabel);
             this.Controls.Add(this.AniiDeStudiuLabel);
@@ -210,5 +227,6 @@
         private System.Windows.Forms.ComboBox SemestruDropDown;
         private System.Windows.Forms.Label SemestruLabel;
         private System.Windows.Forms.Button ButtonSubmit;
+        private System.Windows.Forms.Button minButton;
     }
 }

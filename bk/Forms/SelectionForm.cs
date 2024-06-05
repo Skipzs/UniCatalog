@@ -193,6 +193,11 @@ namespace Login
         {
             semestruId = anStudiuResponse.Semestre[SemestruDropDown.SelectedIndex].Id;
         }
+
+        private void minButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
     public class ProgramStudiu
