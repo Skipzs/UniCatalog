@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "backendMine/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "MongoDB": "1.0.0",
           "MongoDB.Driver": "2.25.0",
           "Newtonsoft.Json": "13.0.3",

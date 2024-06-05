@@ -220,10 +220,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images.png" />
+    <None Include="Resources\dash-computer-icons-clip-art-least-count-2242c6e02bb9214666ddb253acc75c6b.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dash-computer-icons-clip-art-least-count-2242c6e02bb9214666ddb253acc75c6b.png" />
+    <ProjectReference Include="..\backendMine\backendMine.csproj">
+      <Project>{9e3e72bc-9e85-474a-be91-e1dbe3433b2c}</Project>
+      <Name>backendMine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
