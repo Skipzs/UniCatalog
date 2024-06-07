@@ -24,14 +24,18 @@ namespace Login
         private string _cicluInvatamant;
         private string _anStudiu;
         private string _semestru;
-
-        public Tabele(string query, string semestruId)
+        
+        public Tabele(string _cicluInvatamant, string _programStudiu, string _anStudiu, string _semestru, string semestruId)
         {
             InitializeComponent();
-            _query = query;
+            _query = $"User/{_cicluInvatamant}/{_programStudiu}/{_anStudiu}/{_semestru}";
             _semestruId = semestruId;
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(_baseAddress);
+            this._programStudiu = _programStudiu;
+            this._cicluInvatamant = _cicluInvatamant;
+            this._anStudiu = _anStudiu;
+            this._semestru = _semestru;
             LoadDataAsync();
         }
 
@@ -132,6 +136,7 @@ namespace Login
                         // Add new user to the existing DataGridView's data source
                         var users = (BindingList<User>)TabeleStudenti.DataSource;
                         users.Add(newUser);
+                        LoadDataAsync();
                     }
                     catch (Exception ex)
                     {
@@ -187,6 +192,99 @@ namespace Login
                 MessageBox.Show($"A apărut o eroare în timpul exportului datelor în fișier Excel: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private async void ImportButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+                    using (var excelPackage = new ExcelPackage(new System.IO.FileInfo(openFileDialog.FileName)))
+                    {
+                        var worksheet = excelPackage.Workbook.Worksheets[0];
+                        var rows = worksheet.Dimension.Rows;
+                        var columns = worksheet.Dimension.Columns;
+
+                        // Get the list of disciplines from the semester
+                        var response = await _httpClient.GetAsync($"{_baseAddress}Semestru/{_semestruId}");
+                        response.EnsureSuccessStatusCode();
+                        var responseBody = await response.Content.ReadAsStringAsync();
+                        var semestruData = JsonConvert.DeserializeObject<SemestruResponse>(responseBody);
+
+                        // Configure DataGridView columns
+                        TabeleStudenti.Rows.Clear();
+                        TabeleStudenti.Columns.Clear();
+
+                        // Add columns for user details
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("ProgramStudiu", "Program Studii", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("CicluInvatamant", "Ciclu Invatamant", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("AnStudiu", "An Studii", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("Semestru", "Semestru", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("Id", "ID", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("Email", "Email", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("FirstName", "First Name", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("LastName", "Last Name", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("Age", "Age", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("Cnp", "CNP", true));
+                        TabeleStudenti.Columns.Add(CreateTextBoxColumn("PhoneNumber", "Phone Number", true));
+
+                        // Add columns for disciplines
+                        foreach (var disciplina in semestruData.Discipline)
+                        {
+                            TabeleStudenti.Columns.Add(CreateTextBoxColumn(disciplina.NumeDisciplina, disciplina.NumeDisciplina, false));
+                        }
+
+                        // Create a list to store imported users
+                        List<User> importedUsers = new List<User>();
+
+                        // Import data from Excel
+                        for (int i = 2; i <= rows; i++) // Start from row 2 because row 1 contains column titles
+                        {
+                            var user = new User
+                            {
+                                ProgramStudiu = worksheet.Cells[i, 1].Text,
+                                CicluInvatamant = worksheet.Cells[i, 2].Text,
+                                AnStudiu = worksheet.Cells[i, 3].Text,
+                                Semestru = worksheet.Cells[i, 4].Text,
+                                Id = worksheet.Cells[i, 5].Text,
+                                Email = worksheet.Cells[i, 6].Text,
+                                FirstName = worksheet.Cells[i, 7].Text,
+                                LastName = worksheet.Cells[i, 8].Text,
+                                Age = int.TryParse(worksheet.Cells[i, 9].Text, out var age) ? age : 0,
+                                Cnp = worksheet.Cells[i, 10].Text,
+                                PhoneNumber = worksheet.Cells[i, 11].Text,
+                                Discipline = new Dictionary<string, string>()
+                            };
+
+                            // Add disciplines
+                            for (int j = 12; j <= Math.Min(columns, 11 + semestruData.Discipline.Count); j++)
+                            {
+                                string disciplineName = TabeleStudenti.Columns[j - 1].HeaderText;
+                                string grade = worksheet.Cells[i, j].Text;
+                                user.Discipline[disciplineName] = grade;
+                            }
+
+                            importedUsers.Add(user);
+                        }
+
+                        // Bind the imported users to the DataGridView
+                        TabeleStudenti.DataSource = new BindingList<User>(importedUsers);
+
+                        MessageBox.Show("Datele au fost importate cu succes.", "Import Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"A apărut o eroare în timpul importului datelor din fișierul Excel: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
     public class User
@@ -202,6 +300,7 @@ namespace Login
         public int Age { get; set; }
         public string Cnp { get; set; }
         public string PhoneNumber { get; set; }
+        public Dictionary<string, string> Discipline { get; set; } = new Dictionary<string, string>();
     }
 
     public class Disciplina

@@ -182,8 +182,9 @@ namespace Login
                 MessageBox.Show("Toate campurile trebuiesc selectate", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else { 
-            String query = $"User/{CicluriDeInvDropDown.Text}/{ProgrameStudiiDropDown.Text}/{AniiDeStudiuDropDown.Text}/{SemestruDropDown.Text}";
-            Tabele t = new Tabele(query, semestruId);
+            
+            Tabele t = new Tabele(CicluriDeInvDropDown.Text, ProgrameStudiiDropDown.Text, AniiDeStudiuDropDown.Text
+                                  ,SemestruDropDown.Text, semestruId);
             t.Show();
             }
 

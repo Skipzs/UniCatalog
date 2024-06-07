@@ -31,7 +31,13 @@ namespace Login
         /// </summary>
         private void InitializeComponent(string programStudiu, string cicluInvatamant, string anStudiu, string semestru)
         {
-            // Initialize form components
+            this.SuspendLayout();
+            // 
+            // AddUserForm
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "AddUserForm";
+            this.ResumeLayout(false);
             this.Text = "Add New User";
             this.Size = new Size(400, 400);
 
@@ -99,5 +105,7 @@ namespace Login
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

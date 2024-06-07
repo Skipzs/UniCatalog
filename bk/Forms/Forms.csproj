@@ -181,6 +181,9 @@
     <Compile Include="Tabele.Designer.cs">
       <DependentUpon>Tabele.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

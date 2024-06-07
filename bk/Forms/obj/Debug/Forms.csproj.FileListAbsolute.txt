@@ -60,3 +60,4 @@ C:\Users\adria\source\repos\UniCatalog\bk\Forms\obj\Debug\Forms.csproj.CoreCompi
 C:\Users\adria\source\repos\UniCatalog\bk\Forms\obj\Debug\Forms.csproj.Up2Date
 C:\Users\adria\source\repos\UniCatalog\bk\Forms\obj\Debug\Forms.exe
 C:\Users\adria\source\repos\UniCatalog\bk\Forms\obj\Debug\Forms.pdb
+C:\Users\adria\source\repos\UniCatalog\bk\Forms\obj\Debug\Login.AddUserForm.resources

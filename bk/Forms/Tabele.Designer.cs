@@ -31,6 +31,7 @@
             this.TabeleStudenti = new System.Windows.Forms.DataGridView();
             this.SaveButton = new System.Windows.Forms.Button();
             this.AddUserButton = new System.Windows.Forms.Button();
+            this.ImportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TabeleStudenti)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,12 +69,23 @@
             this.AddUserButton.UseVisualStyleBackColor = true;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
+            // ImportButton
+            // 
+            this.ImportButton.Location = new System.Drawing.Point(101, 4);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(75, 23);
+            this.ImportButton.TabIndex = 3;
+            this.ImportButton.Text = "Import";
+            this.ImportButton.UseVisualStyleBackColor = true;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
+            // 
             // Tabele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ImportButton);
             this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.TabeleStudenti);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.DataGridView TabeleStudenti;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button AddUserButton;
+        private System.Windows.Forms.Button ImportButton;
     }
 }
