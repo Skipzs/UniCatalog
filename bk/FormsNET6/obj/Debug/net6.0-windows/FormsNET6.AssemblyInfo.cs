@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FormsNET6")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8191c4567e1a389fdb0b452139ca0117370c417c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c153a3650d47136937821211378a296aad23dd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FormsNET6")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FormsNET6")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
