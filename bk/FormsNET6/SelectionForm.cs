@@ -26,7 +26,7 @@ namespace FormsNET6
             InitializeComponent();
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(_baseAddress);
-            LoadCicluriInvatamantAsync(); // Încarcă ciclurile de învățământ când formularul este inițializat
+            LoadCicluriInvatamantAsync();
         }
 
         public SelectionForm(LoginForm loginForm)
@@ -63,8 +63,6 @@ namespace FormsNET6
         private void ButtonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            // Dacă ai un formular de login, poți să-l arăți din nou
-            // De exemplu, dacă avem un formular de login numit loginForm
             loginForm.Show();
         }
 
@@ -76,6 +74,9 @@ namespace FormsNET6
 
             // Șterge programele de studiu existente din alt combobox sau de altfel de afișare
             ProgrameStudiiDropDown.Items.Clear();
+            ProgrameStudiiDropDown.ResetText();
+            AniiDeStudiuDropDown.ResetText();
+            SemestruDropDown.ResetText();
 
             // Adaugă programele de studiu asociate ciclului de învățământ selectat în alt combobox sau de altfel de afișare
             foreach (var programStudiu in cicluSelectat.ProgramStudiuIds)
@@ -115,11 +116,7 @@ namespace FormsNET6
                     {
                         AniiDeStudiuDropDown.Items.Add(anStudiuResponse.AnStudiuName);
                         // Stocăm informațiile despre semestre pentru utilizare ulterioară
-                        foreach (var semestru in anStudiuResponse.Semestre)
-                        {
-                            // Aici poți face ce dorești cu informațiile despre semestre
-                            // De exemplu, le poți stoca într-o listă sau în altă structură de date
-                        }
+                        
                     }
                 }
             }
@@ -131,6 +128,10 @@ namespace FormsNET6
 
         private void ProgrameStudiiDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AniiDeStudiuDropDown.Items.Clear();
+            AniiDeStudiuDropDown.ResetText();
+            SemestruDropDown.ResetText();
+
             if (ProgrameStudiiDropDown.SelectedIndex >= 0)
             {
                 ProgramStudiu programSelectat = cicluSelectat.ProgramStudiuIds[ProgrameStudiiDropDown.SelectedIndex];
@@ -141,6 +142,8 @@ namespace FormsNET6
 
         private async void AniiDeStudiuDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SemestruDropDown.Items.Clear();
+            SemestruDropDown.ResetText();
             if (AniiDeStudiuDropDown.SelectedIndex >= 0)
             {
                 string anStudiuId = cicluSelectat.ProgramStudiuIds[ProgrameStudiiDropDown.SelectedIndex].AnStudii[AniiDeStudiuDropDown.SelectedIndex];

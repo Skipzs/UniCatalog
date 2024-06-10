@@ -43,7 +43,7 @@ namespace FormsNET6
 
             if (response.IsSuccessStatusCode)
             {
-                SelectionForm f = new SelectionForm(this); // Pass this instance to the SelectionForm
+                SelectionForm f = new SelectionForm(this);
                 this.Hide();
                 f.Show();
             }
@@ -56,7 +56,8 @@ namespace FormsNET6
         {
             if (!isClosingConfirmed)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure you want to close the application?", "Confirm Exit", 
+                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -65,7 +66,7 @@ namespace FormsNET6
                 }
                 else
                 {
-                    e.Cancel = true; // Cancel the form closing event
+                    e.Cancel = true; 
                 }
             }
         }

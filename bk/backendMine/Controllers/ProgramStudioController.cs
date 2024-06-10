@@ -48,9 +48,6 @@ namespace backendMine.Controllers
 
       foreach (var item in data)
       {
-        //item.AnStudii id-urile anilor
-        //noi vrem chiar anii
-        //deci ne folosim de item.AnStudii sa filtram anii de studii din db dupa id
         var CollectionAnStudio= this._database.GetDbCollection<AnStudiu>("AnStudiu");
         var filter = Builders<AnStudiu>.Filter.In("Id", item.AnStudii);
         var pointer = await CollectionAnStudio.FindAsync(filter);
@@ -71,9 +68,6 @@ namespace backendMine.Controllers
          )).FirstOrDefaultAsync(token)
        ; ;
 
-     
- 
-    
       return Ok(data);
 
     }

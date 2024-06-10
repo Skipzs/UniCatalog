@@ -282,7 +282,8 @@ namespace FormsNET6
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"A apărut o eroare în timpul importului datelor din fișierul Excel: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"A apărut o eroare în timpul importului datelor din fișierul Excel: {ex.Message}", "Eroare",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

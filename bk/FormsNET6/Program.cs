@@ -10,7 +10,6 @@
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
 
-            // Oprirea backend-ului nu este necesară, deoarece aplicația va ieși când formularul este închis
         }
     }
 }

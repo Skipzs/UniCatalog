@@ -100,7 +100,8 @@
             this.addButton.Size = new System.Drawing.Size(100, 30);
             this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             this.Controls.Add(this.addButton);
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             this.ResumeLayout(false);
         }
 
